@@ -5,16 +5,25 @@ const { dirname } = require('path');
 const path = require('path');
 const router = require('express').Router();
 const data = require('../../db/notes.json');
-// install uuid, create a require file for it.
+const uuid = require('../../helpers/uuid');
 
 router.get('/notes', (req, res) => {
     let results = data
     res.json(results)
 })
 
+router.get('/notes/:id', (req, res) => {
+    const result = findById(req.params.id, data);
+    if (result) {
+        res.json(result)
+    } else {
+        res.send(404);
+    }
+});
+
 router.post('/notes', (req, res) => {
-    let {title , text} = req.body
-    let newNote = {title, text, id}
+    const {title , text} = req.body
+    const newNote = {title, text, id, review_id: uuid()}
 
     data.push(newNote)
     fs.writeFile(path.join (__dirname, '../../db/notes.json'),
