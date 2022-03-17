@@ -21,12 +21,12 @@ router.get('/notes/:id', (req, res) => {
     }
 });
 
+// Going to use a function that is predefined to get the note and use the .then promises together. newNote variable
 router.post('/notes', (req, res) => {
     const {title , text} = req.body
     const newNote = {title, text, id, review_id: uuid()}
 
-    data.push(newNote)
-    fs.writeFile(path.join (__dirname, '../../db/notes.json'),
+    fs.writeFile(path.join(__dirname, '../../db/notes.json'),
     JSON.stringify(data), 
     err => {
         if (err){
