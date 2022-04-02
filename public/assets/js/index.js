@@ -4,7 +4,10 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+
+//  What is thew  index of my target string that matches this pattern.
+// Window location URL. Index of the pattern notes. Returns as something other than -1 notes are found in my notes string.
+if (window.location.pathname.indexOf('notes') > -1) {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -119,7 +122,8 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-  if (window.location.pathname === '/notes') {
+  console.log(jsonNotes)
+  if (window.location.pathname.indexOf('notes') > -1) {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
@@ -165,7 +169,7 @@ const renderNoteList = async (notes) => {
     noteListItems.push(li);
   });
 
-  if (window.location.pathname === '/notes') {
+  if (window.location.pathname.indexOf('notes') > -1) {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
 };
@@ -173,7 +177,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname.indexOf('notes') > -1) {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
