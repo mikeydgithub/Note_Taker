@@ -37,6 +37,13 @@ SO THAT I can organize my thoughts and keep track of tasks I need to complete
 * You may also chose to deleted a note from the left hand column by clicking the delete button.
 
 ## Pictures
+![landingpage](https://user-images.githubusercontent.com/94988620/163692417-533981ee-4526-4fb5-9690-1464f66ac9d2.jpg)
+
+![notes page](https://user-images.githubusercontent.com/94988620/163692423-8a2443fa-5144-4a7b-9f73-15a94809c540.jpg)
+
+![hasnotes](https://user-images.githubusercontent.com/94988620/163692426-238e456e-2b9f-40ff-bb0a-da551566a0ce.jpg)
+
+![delete ](https://user-images.githubusercontent.com/94988620/163692431-d168b636-fe41-498d-a6cf-95fc6503e83f.jpg)
 
 
 
