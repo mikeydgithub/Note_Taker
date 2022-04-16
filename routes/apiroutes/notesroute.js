@@ -7,7 +7,7 @@ const router = require('express').Router();
 var data = require('../../db/notes.json');
 const uuid = require('../../helpers/uuid');
 
-
+// get path fors notes
 router.get('/notes', (req, res) => {
     let results = data
     res.json(results)
@@ -21,8 +21,10 @@ router.post('/notes', (req, res) => {
     console.log(newNote)
 
     try {
+        // data.push to insert a newNote
         data.push(newNote)
         console.log(data)
+        // write file and join them into the notes.json db.
         fs.writeFile(path.join(__dirname, '../../db/notes.json'),
             JSON.stringify(data),
             err => {
@@ -30,7 +32,7 @@ router.post('/notes', (req, res) => {
                     throw err
                 }
             })
-        // res.json(newNote);
+        // response json data
         res.json(data)
     } catch (err) {
         console.error(err)
@@ -41,6 +43,7 @@ router.post('/notes', (req, res) => {
 // delete route
 router.delete('/notes/:id', (req, res) => {
     console.log('delete end point hit')
+    // filter the deleted data and then write the file again without the deleted data.
     data = data.filter(note => note.id !== req.params.id)
     fs.writeFile(path.join(__dirname, '../../db/notes.json'),
         JSON.stringify(data),
