@@ -1,6 +1,6 @@
 # Note Taker
 ## Table of Contents
-1. [Title](#Title)
+1. [Note Taker](#NoteTaker)
 2. [Usage](#Usage)
 3. [User Story](#UserStory)
 4. [Tests](#Test)
@@ -8,11 +8,8 @@
 6. [Pictures](#Pictures)
 7. [Contribution](#Contribution)
 
-
-
-## Title
-
-Note Taker
+## Note Taker
+https://note-taker299.herokuapp.com/
 
 ## Usage
 
